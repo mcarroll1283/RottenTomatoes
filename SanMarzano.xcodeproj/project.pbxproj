@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		532345B31ADDEC4100A3693C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345B21ADDEC4100A3693C /* AppDelegate.swift */; };
-		532345B51ADDEC4100A3693C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345B41ADDEC4100A3693C /* ViewController.swift */; };
 		532345B81ADDEC4100A3693C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532345B61ADDEC4100A3693C /* Main.storyboard */; };
 		532345BA1ADDEC4100A3693C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532345B91ADDEC4100A3693C /* Images.xcassets */; };
 		532345BD1ADDEC4100A3693C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532345BB1ADDEC4100A3693C /* LaunchScreen.xib */; };
 		532345C91ADDEC4200A3693C /* SanMarzanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345C81ADDEC4200A3693C /* SanMarzanoTests.swift */; };
 		532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345D21ADDEE6D00A3693C /* MoviesViewController.swift */; };
 		533A54451ADF75CE00579677 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A54441ADF75CE00579677 /* MovieCell.swift */; };
+		534B6EFA1ADF89AB00A1E193 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B6EF91ADF89AB00A1E193 /* MovieDetailsViewController.swift */; };
 		5637C7BEC80626927E8741D7 /* libPods-SanMarzano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C88DC8479412D55ABE550019 /* libPods-SanMarzano.a */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,6 @@
 		532345AD1ADDEC4100A3693C /* SanMarzano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanMarzano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532345B11ADDEC4100A3693C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532345B21ADDEC4100A3693C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		532345B41ADDEC4100A3693C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		532345B71ADDEC4100A3693C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		532345B91ADDEC4100A3693C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		532345BC1ADDEC4100A3693C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		532345D21ADDEE6D00A3693C /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		533A54441ADF75CE00579677 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		534B6EF61ADF86EF00A1E193 /* SanMarzano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SanMarzano-Bridging-Header.h"; sourceTree = "<group>"; };
+		534B6EF91ADF89AB00A1E193 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		6E7AA345C5868E59FD89980A /* Pods-SanMarzano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanMarzano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanMarzano/Pods-SanMarzano.debug.xcconfig"; sourceTree = "<group>"; };
 		9D34BC483C0861550B8480D6 /* Pods-SanMarzano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanMarzano.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanMarzano/Pods-SanMarzano.release.xcconfig"; sourceTree = "<group>"; };
 		C88DC8479412D55ABE550019 /* libPods-SanMarzano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SanMarzano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +92,6 @@
 				533A54431ADF759C00579677 /* Views */,
 				533A54421ADF758800579677 /* View Controllers */,
 				532345B21ADDEC4100A3693C /* AppDelegate.swift */,
-				532345B41ADDEC4100A3693C /* ViewController.swift */,
 				532345B61ADDEC4100A3693C /* Main.storyboard */,
 				532345B91ADDEC4100A3693C /* Images.xcassets */,
 				532345BB1ADDEC4100A3693C /* LaunchScreen.xib */,
@@ -131,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				532345D21ADDEE6D00A3693C /* MoviesViewController.swift */,
+				534B6EF91ADF89AB00A1E193 /* MovieDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				532345B51ADDEC4100A3693C /* ViewController.swift in Sources */,
+				534B6EFA1ADF89AB00A1E193 /* MovieDetailsViewController.swift in Sources */,
 				532345B31ADDEC4100A3693C /* AppDelegate.swift in Sources */,
 				533A54451ADF75CE00579677 /* MovieCell.swift in Sources */,
 				532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */,

@@ -90,15 +90,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let cell = sender as UITableViewCell
+        // XXX: More weirdo stuff here. In the video, the above line is this:
+        // let cell = sender as! UITableViewCell
+        // Why do I need these exclamations? Why doesn't as! work for me?
+        // Why can't I find stuff on google about this?
+        let indexPath = tableView.indexPathForCell(cell)!
+        let movie = movies![indexPath.row]
+        let movieDetailsViewController = segue.destinationViewController as MovieDetailsViewController
+        movieDetailsViewController.movie = movie
     }
-    */
 
 }
