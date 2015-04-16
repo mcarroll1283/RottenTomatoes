@@ -78,11 +78,16 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // XXX: another exclamation mark cast needed here? There's one in the video
-        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as MovieCell
         // XXX: According to the video, this is safe because if the above method returned nonzero, then we have
         // a movie. I don't quite follow.
         let movie = movies![indexPath.row]
-        cell.textLabel?.text = movie["title"] as? String
+        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as String)
+        
+        cell.titleLabel.text = movie["title"] as? String
+        cell.synopsisLabel.text = movie["synopsis"] as? String
+        cell.posterView.setImageWithURL(url)
+        
         return cell
     }
 

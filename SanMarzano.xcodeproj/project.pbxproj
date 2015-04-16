@@ -14,6 +14,8 @@
 		532345BD1ADDEC4100A3693C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532345BB1ADDEC4100A3693C /* LaunchScreen.xib */; };
 		532345C91ADDEC4200A3693C /* SanMarzanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345C81ADDEC4200A3693C /* SanMarzanoTests.swift */; };
 		532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345D21ADDEE6D00A3693C /* MoviesViewController.swift */; };
+		533A54451ADF75CE00579677 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A54441ADF75CE00579677 /* MovieCell.swift */; };
+		5637C7BEC80626927E8741D7 /* libPods-SanMarzano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C88DC8479412D55ABE550019 /* libPods-SanMarzano.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,11 @@
 		532345C71ADDEC4200A3693C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532345C81ADDEC4200A3693C /* SanMarzanoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanMarzanoTests.swift; sourceTree = "<group>"; };
 		532345D21ADDEE6D00A3693C /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		533A54441ADF75CE00579677 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		534B6EF61ADF86EF00A1E193 /* SanMarzano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SanMarzano-Bridging-Header.h"; sourceTree = "<group>"; };
+		6E7AA345C5868E59FD89980A /* Pods-SanMarzano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanMarzano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanMarzano/Pods-SanMarzano.debug.xcconfig"; sourceTree = "<group>"; };
+		9D34BC483C0861550B8480D6 /* Pods-SanMarzano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanMarzano.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanMarzano/Pods-SanMarzano.release.xcconfig"; sourceTree = "<group>"; };
+		C88DC8479412D55ABE550019 /* libPods-SanMarzano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SanMarzano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5637C7BEC80626927E8741D7 /* libPods-SanMarzano.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +72,8 @@
 				532345AF1ADDEC4100A3693C /* SanMarzano */,
 				532345C51ADDEC4200A3693C /* SanMarzanoTests */,
 				532345AE1ADDEC4100A3693C /* Products */,
+				D3AE5010B5B4EB26FA6602B0 /* Pods */,
+				7C3B0452BBA1F4A492B00F1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +89,15 @@
 		532345AF1ADDEC4100A3693C /* SanMarzano */ = {
 			isa = PBXGroup;
 			children = (
+				533A54431ADF759C00579677 /* Views */,
+				533A54421ADF758800579677 /* View Controllers */,
 				532345B21ADDEC4100A3693C /* AppDelegate.swift */,
 				532345B41ADDEC4100A3693C /* ViewController.swift */,
 				532345B61ADDEC4100A3693C /* Main.storyboard */,
-				532345D21ADDEE6D00A3693C /* MoviesViewController.swift */,
 				532345B91ADDEC4100A3693C /* Images.xcassets */,
 				532345BB1ADDEC4100A3693C /* LaunchScreen.xib */,
 				532345B01ADDEC4100A3693C /* Supporting Files */,
+				534B6EF61ADF86EF00A1E193 /* SanMarzano-Bridging-Header.h */,
 			);
 			path = SanMarzano;
 			sourceTree = "<group>";
@@ -115,6 +127,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		533A54421ADF758800579677 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				532345D21ADDEE6D00A3693C /* MoviesViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		533A54431ADF759C00579677 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				533A54441ADF75CE00579677 /* MovieCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7C3B0452BBA1F4A492B00F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C88DC8479412D55ABE550019 /* libPods-SanMarzano.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3AE5010B5B4EB26FA6602B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AA345C5868E59FD89980A /* Pods-SanMarzano.debug.xcconfig */,
+				9D34BC483C0861550B8480D6 /* Pods-SanMarzano.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 532345CC1ADDEC4200A3693C /* Build configuration list for PBXNativeTarget "SanMarzano" */;
 			buildPhases = (
+				418A137C8CD9C95CACD1CFC5 /* Check Pods Manifest.lock */,
 				532345A91ADDEC4100A3693C /* Sources */,
 				532345AA1ADDEC4100A3693C /* Frameworks */,
 				532345AB1ADDEC4100A3693C /* Resources */,
+				8FED12BE69DEFA5A4BD41469 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +257,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		418A137C8CD9C95CACD1CFC5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FED12BE69DEFA5A4BD41469 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SanMarzano/Pods-SanMarzano-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		532345A91ADDEC4100A3693C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,6 +297,7 @@
 			files = (
 				532345B51ADDEC4100A3693C /* ViewController.swift in Sources */,
 				532345B31ADDEC4100A3693C /* AppDelegate.swift in Sources */,
+				533A54451ADF75CE00579677 /* MovieCell.swift in Sources */,
 				532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,21 +419,28 @@
 		};
 		532345CD1ADDEC4200A3693C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E7AA345C5868E59FD89980A /* Pods-SanMarzano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SanMarzano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SanMarzano/SanMarzano-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		532345CE1ADDEC4200A3693C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D34BC483C0861550B8480D6 /* Pods-SanMarzano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SanMarzano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SanMarzano/SanMarzano-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +497,7 @@
 				532345CE1ADDEC4200A3693C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		532345CF1ADDEC4200A3693C /* Build configuration list for PBXNativeTarget "SanMarzanoTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +506,7 @@
 				532345D11ADDEC4200A3693C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
