@@ -13,6 +13,7 @@
 		532345BA1ADDEC4100A3693C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532345B91ADDEC4100A3693C /* Images.xcassets */; };
 		532345BD1ADDEC4100A3693C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532345BB1ADDEC4100A3693C /* LaunchScreen.xib */; };
 		532345C91ADDEC4200A3693C /* SanMarzanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345C81ADDEC4200A3693C /* SanMarzanoTests.swift */; };
+		532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532345D21ADDEE6D00A3693C /* MoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		532345C21ADDEC4200A3693C /* SanMarzanoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanMarzanoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532345C71ADDEC4200A3693C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532345C81ADDEC4200A3693C /* SanMarzanoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanMarzanoTests.swift; sourceTree = "<group>"; };
+		532345D21ADDEE6D00A3693C /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				532345B21ADDEC4100A3693C /* AppDelegate.swift */,
 				532345B41ADDEC4100A3693C /* ViewController.swift */,
 				532345B61ADDEC4100A3693C /* Main.storyboard */,
+				532345D21ADDEE6D00A3693C /* MoviesViewController.swift */,
 				532345B91ADDEC4100A3693C /* Images.xcassets */,
 				532345BB1ADDEC4100A3693C /* LaunchScreen.xib */,
 				532345B01ADDEC4100A3693C /* Supporting Files */,
@@ -214,6 +217,7 @@
 			files = (
 				532345B51ADDEC4100A3693C /* ViewController.swift in Sources */,
 				532345B31ADDEC4100A3693C /* AppDelegate.swift in Sources */,
+				532345D31ADDEE6D00A3693C /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
