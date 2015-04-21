@@ -27,8 +27,6 @@ class MovieDetailsViewController: UIViewController {
             urlString = urlString.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
         }
         
-        println(urlString)
-        
         let url = NSURL(string: urlString)
         
         titleLabel.text = movie["title"] as? String
