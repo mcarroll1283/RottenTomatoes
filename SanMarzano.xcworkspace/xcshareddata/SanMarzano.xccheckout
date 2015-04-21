@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0B5BE607-FFCA-490C-B69C-00FB63798D4B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SanMarzano</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA5072AC251B3AD19415E3444D2AF23770BDF1DB</key>
+		<string>bitbucket.org:mjcarroll/san-marzano.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SanMarzano.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA5072AC251B3AD19415E3444D2AF23770BDF1DB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:mjcarroll/san-marzano.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA5072AC251B3AD19415E3444D2AF23770BDF1DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA5072AC251B3AD19415E3444D2AF23770BDF1DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SanMarzano</string>
+		</dict>
+	</array>
+</dict>
+</plist>

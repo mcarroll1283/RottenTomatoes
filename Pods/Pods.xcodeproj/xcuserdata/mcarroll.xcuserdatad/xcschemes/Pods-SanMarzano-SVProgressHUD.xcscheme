@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D793CCE61FEA2BB84404A708"
-               BuildableName = "libPods-SanMarzano-AFNetworking.a"
-               BlueprintName = "Pods-SanMarzano-AFNetworking"
+               BlueprintIdentifier = "46C2E6F6AEC20B99F36F0F4A"
+               BuildableName = "libPods-SanMarzano-SVProgressHUD.a"
+               BlueprintName = "Pods-SanMarzano-SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

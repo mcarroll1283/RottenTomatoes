@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SanMarzano-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SanMarzano.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>908BB1D81C775C0F414FE8B5</key>
+		<key>449E2D253DFC1B9D6DC2DE11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDDDE9F79DB65FEFB8FAC640</key>
+		<key>46C2E6F6AEC20B99F36F0F4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D793CCE61FEA2BB84404A708</key>
 		<dict>
 			<key>primary</key>
 			<true/>

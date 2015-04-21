@@ -3,6 +3,7 @@
 
 target 'SanMarzano' do
   pod "AFNetworking"
+  pod "SVProgressHUD"
 end
 
 target 'SanMarzanoTests' do

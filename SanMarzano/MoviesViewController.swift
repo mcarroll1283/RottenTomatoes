@@ -31,7 +31,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
         let request = NSURLRequest(URL: url)
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error:  NSError!) -> Void in
+            SVProgressHUD.dismiss()
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
                 // XXX: Dangerous - will crash if JSON object doesn't have movies key
