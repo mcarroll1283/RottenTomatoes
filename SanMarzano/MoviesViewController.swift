@@ -26,48 +26,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var networkErrorView: UIView!
     
+    var refreshControl: UIRefreshControl!
+    
     var movies : [NSDictionary]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkErrorView.hidden = true
-
-        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
-        let request = NSURLRequest(URL: url)
-        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error:  NSError!) -> Void in
-            SVProgressHUD.dismiss()
-            
-            if error != nil {
-                self.networkErrorView.hidden = false
-                return
-            }
-            
-            let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
-            if let json = json {
-                // XXX: Dangerous - will crash if JSON object doesn't have movies key
-                self.movies = json["movies"] as? [NSDictionary]
-                self.tableView.reloadData()
-            } else {
-                println("JSON serialization failed")
-            }
-        }
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+        
+        loadMoviesDataIntoTableView()
         
         tableView.dataSource = self
         tableView.delegate = self
-
-        // Do API request with boilerplate code
-//        print("do API request")
-        // Auto cast to NSArray? type below:
-        // let movies = json["movies"] as? NSArray
-        
-        // Tip: Option click on variable to display inferred type
-        
-        // After async call response, make sure to do: self.tableView.reloadData()
-        
-        // Use CocoaPods to get 3rd party networking library AFNetworking
-        // It's ObjC, so we need to create a bridge header
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,6 +95,42 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let movie = movies![indexPath.row]
         let movieDetailsViewController = segue.destinationViewController as MovieDetailsViewController
         movieDetailsViewController.movie = movie
+    }
+    
+    func onRefresh() {
+        // TODO: Add a 'finished' closure callback argument to loadMoviesDataIntoTableView.
+        // Use it to call self.refreshControl.endRefreshing() only after the request completes
+        
+        // TODO: Also, should I maybe empty the table view first? Is that even possible?
+        loadMoviesDataIntoTableView()
+        self.refreshControl.endRefreshing()
+    }
+    
+    private func loadMoviesDataIntoTableView() {
+        // TODO: Make it not take up space unless it's visible
+        networkErrorView.hidden = true
+        
+        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
+        let request = NSURLRequest(URL: url)
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error:  NSError!) -> Void in
+            SVProgressHUD.dismiss()
+            
+            if error != nil {
+                self.networkErrorView.hidden = false
+                return
+            }
+            
+            let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
+            if let json = json {
+                // XXX: Dangerous - will crash if JSON object doesn't have movies key
+                self.movies = json["movies"] as? [NSDictionary]
+                self.tableView.reloadData()
+            } else {
+                println("JSON serialization failed")
+            }
+        }
+
     }
 
 }
