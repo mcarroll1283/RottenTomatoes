@@ -7,17 +7,6 @@
 //
 
 import UIKit
-// TODO:
-// subclass UITableViewDataSource (a protocol)
-// add required methods cellForRowAtIndexPath, numberOfRowsInSection
-
-// Created prototype cell in storyboard, named it (reuse identifier) MovieCell
-
-// Setting zero lines in label means 'wrap text'
-
-// Don't name outlet variable for an image view 'imageView', or bad things happen?
-
-// Embed MoviesView in a Navigation Controller (Editor menu)
 
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
@@ -62,10 +51,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // XXX: another exclamation mark cast needed here? There's one in the video
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as MovieCell
-        // XXX: According to the video, this is safe because if the above method returned nonzero, then we have
-        // a movie. I don't quite follow.
         let movie = movies![indexPath.row]
         let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as String)
         
@@ -84,13 +70,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         let cell = sender as UITableViewCell
-        // XXX: More weirdo stuff here. In the video, the above line is this:
-        // let cell = sender as! UITableViewCell
-        // Why do I need these exclamations? Why doesn't as! work for me?
-        // Why can't I find stuff on google about this?
         let indexPath = tableView.indexPathForCell(cell)!
         let movie = movies![indexPath.row]
         let movieDetailsViewController = segue.destinationViewController as MovieDetailsViewController
@@ -123,7 +103,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
-                // XXX: Dangerous - will crash if JSON object doesn't have movies key
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
             } else {
