@@ -26,7 +26,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
         
-        loadMoviesDataIntoTableView()
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+        loadMoviesDataIntoTableView() {
+            SVProgressHUD.dismiss()
+        }
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -78,23 +81,19 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func onRefresh() {
-        // TODO: Add a 'finished' closure callback argument to loadMoviesDataIntoTableView.
-        // Use it to call self.refreshControl.endRefreshing() only after the request completes
-        
         // TODO: Also, should I maybe empty the table view first? Is that even possible?
-        loadMoviesDataIntoTableView()
-        self.refreshControl.endRefreshing()
+        loadMoviesDataIntoTableView() {
+            self.refreshControl.endRefreshing()
+        }
     }
     
-    private func loadMoviesDataIntoTableView() {
+    private func loadMoviesDataIntoTableView(onFinished: (()->())? = nil) {
         // TODO: Make it not take up space unless it's visible
         networkErrorView.hidden = true
         
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
         let request = NSURLRequest(URL: url)
-        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error:  NSError!) -> Void in
-            SVProgressHUD.dismiss()
             
             if error != nil {
                 self.networkErrorView.hidden = false
@@ -105,6 +104,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             if let json = json {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
+                
+                if let onFinished = onFinished {
+                    onFinished()
+                }
             } else {
                 println("JSON serialization failed")
             }
